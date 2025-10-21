@@ -34,9 +34,14 @@ d = c * 4      # d._prev = {c}
 Creates this **Directed Acyclic Graph (DAG)**:
 ```
 a(2) ──┐
-       ├─→ c(5) ──→ d(20)
-b(3) ──┘
+       ├─→ c(5) ──┐
+b(3) ──┘          ├─→ d(20)
+            4 ────┘
 ```
+
+Where:
+- `c = a + b = 2 + 3 = 5`
+- `d = c * 4 = 5 * 4 = 20`
 
 Key properties:
 - **Multiple parents**: `c` has two parents (`a` and `b`)
