@@ -2,25 +2,12 @@
 
 ## Executive Summary
 
-This document tracks our exploration of how neural networks and LLMs actually work under the hood. Starting from micrograd's automatic differentiation engine, we'll build understanding step by step.
-
-## Current Understanding Level
-
-**What I know:**
-- How to use LLMs effectively for coding and tasks
-- Web development (bread and butter - lead engineer experience)
-- System design, architecture, and production concerns
-
-**What I want to learn:**
-- How automatic differentiation works
-- What gradients actually represent
-- How neural networks learn from data
-- The path from simple neurons to transformer architectures
+This document tracks exploration of how neural networks and LLMs actually work under the hood. Starting from micrograd's automatic differentiation engine, we build understanding step by step through hands-on experiments.
 
 ## Learning Path
 
 ### Phase 1: Automatic Differentiation Fundamentals
-- [ ] Understand what a `Value` object represents
+- [x] Understand what a `Value` object represents
 - [ ] Trace through a simple forward pass
 - [ ] See how gradients flow backward
 - [ ] Visualize the computational graph
@@ -46,7 +33,9 @@ This document tracks our exploration of how neural networks and LLMs actually wo
 ## Experiments & Notes
 
 ### Experiment 1: First Value Operations
-*Coming soon - let's trace through some basic math operations*
+See [`experiments/value_experiment.py`](../experiments/value_experiment.py) - demonstrates how Value objects build computational graphs and compute gradients.
+
+**Key insight**: Each Value remembers its parents through `._prev`, creating a graph that `backward()` can walk through to compute gradients automatically.
 
 ### Questions to Explore
 - Why do we need gradients at all?
@@ -60,4 +49,4 @@ This document tracks our exploration of how neural networks and LLMs actually wo
 
 ---
 
-*This is a living document - we'll update it as we learn and experiment together.*
+*This is a living document - updated as we learn and experiment.*
