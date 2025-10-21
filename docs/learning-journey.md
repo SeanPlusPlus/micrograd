@@ -7,7 +7,7 @@ This document tracks exploration of how neural networks and LLMs actually work u
 ## Learning Path
 
 ### Phase 1: Automatic Differentiation Fundamentals
-- [x] Understand what a `Value` object represents
+- [ ] Understand what a `Value` object represents
 - [ ] Trace through a simple forward pass
 - [ ] See how gradients flow backward
 - [ ] Visualize the computational graph
