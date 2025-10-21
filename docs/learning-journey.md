@@ -8,7 +8,8 @@ This document tracks our exploration of how neural networks and LLMs actually wo
 
 **What I know:**
 - How to use LLMs effectively for coding and tasks
-- Basic programming concepts
+- Web development (bread and butter - lead engineer experience)
+- System design, architecture, and production concerns
 
 **What I want to learn:**
 - How automatic differentiation works
