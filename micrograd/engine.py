@@ -1,33 +1,60 @@
 
 class Value:
-    """ stores a single scalar value and its gradient """
+    """ 
+    A smart number that tracks its value AND how to compute gradients.
+    This is the core of automatic differentiation - every math operation
+    creates a new Value that remembers how it was made.
+    """
 
     def __init__(self, data, _children=(), _op=''):
+        # The actual numeric value (e.g., 2.5, -1.0, etc.)
         self.data = data
+        
+        # The gradient - how much the final output changes if we nudge this value
+        # Starts at 0, gets filled in during backward pass
         self.grad = 0
-        # internal variables used for autograd graph construction
+        
+        # Function that knows how to compute gradients for this specific operation
+        # Gets overwritten by each math operation (__add__, __mul__, etc.)
         self._backward = lambda: None
+        
+        # Set of Value objects that were used to create this one
+        # Forms the computational graph - these are our "parents"
         self._prev = set(_children)
-        self._op = _op # the op that produced this node, for graphviz / debugging / etc
+        
+        # String describing what operation created this Value (for debugging/visualization)
+        self._op = _op
 
     def __add__(self, other):
+        # Convert regular numbers to Value objects so we can track gradients
         other = other if isinstance(other, Value) else Value(other)
+        
+        # Create new Value with the sum, remembering who the parents are
         out = Value(self.data + other.data, (self, other), '+')
 
+        # Define how gradients flow backward through addition
+        # Key insight: gradient of addition just passes through unchanged to both inputs
+        # If output needs to increase by X, both inputs should increase by X
         def _backward():
-            self.grad += out.grad
-            other.grad += out.grad
+            self.grad += out.grad    # Add (don't overwrite!) the gradient
+            other.grad += out.grad   # Both inputs get the same gradient
         out._backward = _backward
 
         return out
 
     def __mul__(self, other):
+        # Convert regular numbers to Value objects
         other = other if isinstance(other, Value) else Value(other)
+        
+        # Create new Value with the product
         out = Value(self.data * other.data, (self, other), '*')
 
+        # Define how gradients flow backward through multiplication
+        # Key insight: gradient of multiplication uses the "other" input's value
+        # If f = a * b, then df/da = b and df/db = a (basic calculus!)
         def _backward():
-            self.grad += other.data * out.grad
-            other.grad += self.data * out.grad
+            self.grad += other.data * out.grad   # My gradient = other's value * output gradient
+            other.grad += self.data * out.grad   # Other's gradient = my value * output gradient
         out._backward = _backward
 
         return out
