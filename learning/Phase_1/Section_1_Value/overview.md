@@ -1,7 +1,5 @@
 # Understanding the Value Class
 
-> **Hands-on experiment**: [`experiments/value_experiment.py`](../../experiments/value_experiment.py) - Run this to see Value objects in action!
-
 ## Executive Summary
 
 The `Value` class is a "smart number" that tracks both its numeric value and how to compute gradients. Each `Value` maintains backward pointers to its parent nodes, creating a computational graph that remembers the exact path of computation. This structure is the foundation of automatic differentiation - when you call `backward()`, it follows these pointers in reverse to backpropagate gradients through the entire computation.
