@@ -1,52 +1,52 @@
-# Learning Journey: From LLM User to Understanding Internals
+# Learning Plan: Neural Networks from First Principles
 
 ## Executive Summary
 
-This document tracks exploration of how neural networks and LLMs actually work under the hood. Starting from micrograd's automatic differentiation engine, we build understanding step by step through hands-on experiments.
+This learning journey explores how neural networks and LLMs work under the hood, starting from micrograd's automatic differentiation engine. Each concept is broken down into digestible sections with theory, hands-on experiments, and quizzes.
+
+## Structure
+
+Each learning phase is organized as:
+```
+Phase_X/
+├── Section_Y_Topic/
+│   ├── overview.md    # Core concepts and theory
+│   ├── experiment.py  # Hands-on code to run
+│   └── quiz.md       # Test understanding
+```
+
+This approach ensures:
+- **Theory**: Clear explanations of concepts
+- **Practice**: Executable code to see concepts in action  
+- **Assessment**: Quizzes to verify understanding
 
 ## Learning Path
 
 ### Phase 1: Automatic Differentiation Fundamentals
-- [x] Understand what a `Value` object represents
-- [ ] Trace through a simple forward pass
-- [ ] See how gradients flow backward
-- [ ] Visualize the computational graph
+- [x] **Section 1: Value Objects** - Understanding smart numbers that track gradients
+- [ ] **Section 2: Forward Pass** - Tracing computation and graph building
+- [ ] **Section 3: Backward Pass** - How gradients flow through the graph
+- [ ] **Section 4: Visualization** - Seeing the computational graph
 
 ### Phase 2: Neural Network Basics
-- [ ] Build a single neuron from scratch
-- [ ] Understand weights, biases, and activation functions
-- [ ] Train a simple network on toy data
-- [ ] See how loss functions guide learning
+- [ ] **Section 1: Single Neuron** - Building neurons from Value objects
+- [ ] **Section 2: Weights & Biases** - Understanding parameters
+- [ ] **Section 3: Activation Functions** - ReLU, sigmoid, and their purposes
+- [ ] **Section 4: Loss Functions** - How networks measure performance
 
-### Phase 3: Scaling Up Concepts
-- [ ] Multiple layers and hidden representations
-- [ ] Different activation functions and their purposes
-- [ ] Optimization algorithms (SGD, Adam, etc.)
-- [ ] Regularization and overfitting
+### Phase 3: Training Networks
+- [ ] **Section 1: Gradient Descent** - Following gradients to minimize loss
+- [ ] **Section 2: Backpropagation** - Training multi-layer networks
+- [ ] **Section 3: Optimization** - SGD, momentum, learning rates
+- [ ] **Section 4: Real Dataset** - Training on actual data
 
 ### Phase 4: Path to Modern LLMs
-- [ ] From MLPs to attention mechanisms
-- [ ] Sequence modeling and embeddings
-- [ ] Transformer architecture basics
-- [ ] Training at scale concepts
-
-## Experiments & Notes
-
-### Experiment 1: First Value Operations
-See [`experiments/value_experiment.py`](../experiments/value_experiment.py) - demonstrates how Value objects build computational graphs and compute gradients.
-
-**Key insight**: Each Value remembers its parents through `._prev`, creating a graph that `backward()` can walk through to compute gradients automatically.
-
-### Questions to Explore
-- Why do we need gradients at all?
-- How does backpropagation actually work?
-- What makes transformers so powerful for language?
+- [ ] **Section 1: Multi-Layer Perceptrons** - Scaling up networks
+- [ ] **Section 2: Sequence Modeling** - Handling text and sequences
+- [ ] **Section 3: Attention Mechanisms** - The transformer revolution
+- [ ] **Section 4: Modern Architectures** - From GPT to current models
 
 ## Resources
-- [Micrograd repo](https://github.com/karpathy/micrograd) - our starting point
+- [Micrograd repo](https://github.com/karpathy/micrograd) - our foundation
 - [Andrej Karpathy's Neural Networks: Zero to Hero](https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ)
 - [3Blue1Brown Neural Networks series](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)
-
----
-
-*This is a living document - updated as we learn and experiment.*

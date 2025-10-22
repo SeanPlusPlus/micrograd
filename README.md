@@ -2,6 +2,8 @@
 # micrograd
 
 > **Fork Note**: This is a personal fork for experimentation and learning. Adding logging, notes, and modifications to better understand automatic differentiation concepts.
+> 
+> **Learning Journey**: See [`learning/`](./learning/) for a structured exploration of neural networks from first principles, with hands-on experiments and quizzes for each concept.
 
 ![awww](puppy.jpg)
 
