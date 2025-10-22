@@ -4,6 +4,14 @@
 
 This learning journey explores how neural networks and LLMs work under the hood, starting from micrograd's automatic differentiation engine. Each concept is broken down into digestible sections with theory, hands-on experiments, and quizzes.
 
+## Recommended Usage
+
+**Best experienced with a coding agent**: This learning path is designed to be explored interactively with an AI coding assistant. The agent can:
+- Explain concepts and answer questions as you learn
+- Help you work through the experiments step by step  
+- Quiz you on concepts (answers are included in quiz files, so the agent can check your understanding)
+- Adapt explanations based on your background and learning style
+
 ## Structure
 
 Each learning phase is organized as:
