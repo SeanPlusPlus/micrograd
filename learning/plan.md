@@ -34,7 +34,7 @@ This approach ensures:
 - [x] **Section 1: Value Objects** - Understanding smart numbers that track gradients
 - [x] **Section 2: Forward Pass** - Tracing computation and graph building
 - [x] **Section 3: Backward Pass** - How gradients flow through the graph
-- [ ] **Section 4: Visualization** - Seeing the computational graph
+- [x] **Section 4: Visualization** - Seeing the computational graph
 
 ### Phase 2: Neural Network Basics
 - [ ] **Section 1: Single Neuron** - Building neurons from Value objects
