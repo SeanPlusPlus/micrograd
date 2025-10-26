@@ -38,7 +38,12 @@ This approach ensures:
 
 ### Phase 2: Neural Network Basics
 - [x] **Section 1: Single Neuron** - Building neurons from Value objects
-- [ ] **Section 2: Weights & Biases** - Understanding parameters
+- [x] **Section 2: Multiple Neurons & Parameters** - Understanding how networks learn
+  - ✅ Layer architecture (multiple neurons working in parallel)
+  - ✅ Parameters (weights & biases) and how they get trained
+  - ✅ Gradient-based learning through epochs
+  - ✅ The holy trinity: more parameters + more data + more compute
+  - ✅ The bitter lesson: general methods beat hand-coded solutions
 - [ ] **Section 3: Activation Functions** - ReLU, sigmoid, and their purposes
 - [ ] **Section 4: Loss Functions** - How networks measure performance
 
