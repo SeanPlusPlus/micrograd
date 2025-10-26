@@ -37,7 +37,7 @@ This approach ensures:
 - [x] **Section 4: Visualization** - Seeing the computational graph
 
 ### Phase 2: Neural Network Basics
-- [ ] **Section 1: Single Neuron** - Building neurons from Value objects
+- [x] **Section 1: Single Neuron** - Building neurons from Value objects
 - [ ] **Section 2: Weights & Biases** - Understanding parameters
 - [ ] **Section 3: Activation Functions** - ReLU, sigmoid, and their purposes
 - [ ] **Section 4: Loss Functions** - How networks measure performance
