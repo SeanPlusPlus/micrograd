@@ -63,6 +63,23 @@ Multiple weak learners can combine to create a strong learner - this is the foun
 3. **Grasp the scaling principle** - more neurons = more capability
 4. **Foundation for deep learning** - layers are the building blocks
 
+## Training Process: Epochs Explained
+
+**Epoch = One complete pass through all training data**
+
+Each epoch follows this cycle:
+1. **Try**: Make predictions with current weights
+2. **Measure**: Calculate how wrong the predictions are (loss)
+3. **Adjust**: Update weights based on gradients to reduce errors
+4. **Repeat**: Do it again with slightly better weights
+
+**Example progression:**
+- Epoch 0: Loss = 5.63 ("I'm really wrong with random weights")
+- Epoch 20: Loss = 0.62 ("Getting better after 20 rounds of adjustments")  
+- Epoch 80: Loss = 0.024 ("Almost perfect after 80 learning cycles")
+
+**Key insight**: Neural networks learn through repetition - each epoch makes them slightly smarter by adjusting parameters based on mistakes.
+
 ## Next Steps
 
 After mastering multiple neurons, we'll explore how to stack layers to create deep networks that can learn hierarchical representations and solve even more complex problems.
